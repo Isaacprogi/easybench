@@ -1,11 +1,9 @@
 import React from 'react'
 
-interface ButtonProps {
-    label:string
-}
+const Button = () => {
+    return <button>
 
-const Button = (props:ButtonProps) => {
-    return <button>{props.label}</button>
+    </button>
 }
 
 export default Button
