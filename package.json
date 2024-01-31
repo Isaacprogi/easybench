@@ -1,15 +1,19 @@
 {
-  "name": "reqbench",
-  "version": "1.0.1",
+  "name": "@isaacprogi/ui",
+  "version": "1.0.2",
   "description": "React component library",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/isaacprogi"
+  },
   "types": "dist/index.d.ts",
   "scripts": {
-    "rollup": "rollup -c --bundleConfigAsCjs"
+    "dev": "rollup -c --watch",
+    "build": "rollup -c"
   },
   "keywords": [],
   "author": "Isaac Anasonye",
@@ -22,7 +26,12 @@
     "react": "^18.2.0",
     "rollup": "^4.9.6",
     "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@isaacprogi/ui": "^1.0.1",
+    "postcss": "^8.4.33"
   }
 }
