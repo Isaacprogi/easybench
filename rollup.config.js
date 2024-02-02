@@ -2,28 +2,27 @@ import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
 import { dts } from 'rollup-plugin-dts'
-import packageJson from './package.json' assert {type: 'json'}
 import postcss from 'rollup-plugin-postcss'
-import json from '@rollup/plugin-json';
+import json from '@rollup/plugin-json'
+ 
 
 export default [
     {
         input: 'src/index.ts',
         output: [
             {
-                file: packageJson.main,
+                file: 'dist/cjs/index.js',
                 format: 'cjs',
                 sourcemap: true,
             },
             {
-                file: packageJson.module,
+                file: 'dist/esm/index.js',
                 format: 'esm',
                 sourcemap: true,
             },
         ],
         plugins: [
             resolve(),
-            json(),
             commonjs(),
             typescript({ tsconfig: './tsconfig.json' }),
             postcss(
@@ -33,13 +32,13 @@ export default [
                     sourceMap: true,
                     modules: true,
                 }
-            )
+            ),
+            json(),
         ]
     },
     {
         input: 'dist/esm/types/index.d.ts',
         output: [{ file: 'dist/index.d.ts', format: 'esm' }],
         plugins: [dts()],
-        external: [/\.css/]
     }
 ]
