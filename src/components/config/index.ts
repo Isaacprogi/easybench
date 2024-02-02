@@ -1,1 +1,1 @@
-export * from './useApi'
+export {useApi,ApiProvider} from './useApi'
