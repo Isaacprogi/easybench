@@ -1,5 +1,5 @@
 {
-  "name": "@isaacprogi/ui",
+  "name": "@isaacprogi/easybench",
   "version": "1.0.3",
   "description": "React component library",
   "main": "dist/cjs/index.js",
@@ -13,7 +13,11 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "rollup -c --watch",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "test": "jest --watchAll --verbose"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   },
   "keywords": [],
   "author": "Isaac Anasonye",
@@ -23,6 +27,8 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/react": "^18.2.48",
+    "axios": "^1.6.7",
+    "debug": "^4.3.4",
     "react": "^18.2.0",
     "rollup": "^4.9.6",
     "rollup-plugin-dts": "^6.1.0",
@@ -32,6 +38,7 @@
   },
   "dependencies": {
     "@isaacprogi/ui": "^1.0.1",
+    "@rollup/plugin-json": "^6.1.0",
     "postcss": "^8.4.33"
   }
 }
